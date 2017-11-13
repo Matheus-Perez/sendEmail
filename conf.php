@@ -5,24 +5,21 @@ use sendEmail\Email\sendEmail53;
 
 require 'vendor/autoload.php';
 
-/**
- * SO ALTERE ESSE CODIGO QUANDO VC SABE O QUE ESTA FAZENDO!
- * */
 $language = "pt";
-$emailRemetente = "sistemas.usb@adventistas.org.br";
-$nomeRemetente = "ABES";
-$host = "mail.usb.org.br";
-$password = 'u$b2102';
+$emailRemetente = "youremail@com.br";
+$nomeRemetente = "your name";
+$host = "";
+$password = '';
 $port = "587";
 $secure = "tls";
 $charSet = "utf-8";
 $wordwrap = 70;
 
-//-- INSTANCIA A CLASSE DO EMAIL
+
 $dataEmail = new Email($language,$emailRemetente,$nomeRemetente,$host,$password,$port,$secure,$charSet,$wordwrap);
 
 /**
- ** FUNÇÃO PARA ENVIAR O EMAIL **
+ ** SEND EMAIL **
  **/
 
 function sendNewEmail($destinaratios, $subject,$body)
@@ -30,9 +27,9 @@ function sendNewEmail($destinaratios, $subject,$body)
     global $dataEmail;
 
     //--verifica se os valores foram passados
-    if(empty($destinaratios)){ die("O Email do destinatario não foi informado");}
-    if(empty($subject)){ die("O Titulo não foi informado");}
-    if(empty($body)){ die("O Texto não foi informado");}
+    if(empty($destinaratios)){ die("Receiver Email Was Not Informed");}
+    if(empty($subject)){ die("the title was not informed");}
+    if(empty($body)){ die("The text was not informed");}
 
     //-- PASSA OS VALORES PARA AS CLASSES
     $dataEmail->setDestinatarios($destinaratios);
@@ -42,7 +39,7 @@ function sendNewEmail($destinaratios, $subject,$body)
     //-- VERIFICA A VERSAO DO PHP
     if (version_compare(PHP_VERSION, '5.4.0', '<') )
     {
-        die("Versão não suportada!");
+        die("version not supported!");
     }
     else
     {

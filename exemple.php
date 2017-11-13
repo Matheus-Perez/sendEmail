@@ -5,16 +5,18 @@ require 'conf.php';
 
 /**
  *
- * MANDAR PARA VARIOS DESTINATARIOS
+ * several recipient
  *$destinaratios =
  *   Array(
  *       array('name'=> 'name1', 'email' => "email1"),
  *       array('name'=> 'name2', 'email' => "email2"),
  *   );
- *   ELE IRA TE RETORNAR UMA ARRAY COM O RESULT(Bool)  E ERRORINFO(String), SE TE DER TRUE O EMAIL FOI ENVIADO COM SUCESSO
- **/
-$destinaratios  = Array(array('name'=> 'Matheus Perez', 'email' => 'matheus.perez@iap.org.br'),); // "matheuslperez@gmail.com";//
+ *
+ *   The function will return an array with the following parameters
+ *   Result(bool) and Errorinfo(String)
+ * **/
+$destinaratios  = Array(array('name'=> 'recipient name', 'recipient email' => 'email@dominio.com.br'),);
 
-$return = sendNewEmail($destinaratios,'TESTE DE ENVIO DE EMAIL','TESTE DE ENVIO COM LIB DE EMAIL');
+$return = sendNewEmail($destinaratios,'TITLE','BODY');
 
 var_dump($return);
